@@ -849,7 +849,7 @@ public class MusicUtils {
         } catch (RemoteException ex) {
         } finally {
             Intent intent = new Intent("com.android.music.PLAYBACK_VIEWER")
-                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
             context.startActivity(intent);
         }
     }
