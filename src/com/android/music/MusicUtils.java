@@ -571,20 +571,20 @@ public class MusicUtils {
             while (! c.isAfterLast()) {
                 String name = c.getString(1);
                 File f = new File(name);
-		Intent i = new Intent();
-		i.setAction(Intent.ACTION_SEND);
-		i.setType("audio/*");
-		i.putExtra(Intent.EXTRA_SUBJECT, f.getName());
-		i.putExtra(Intent.EXTRA_STREAM, Uri.parse("content://" + AUTHORITY + f.getAbsolutePath()));
+                Intent i = new Intent();
+                i.setAction(Intent.ACTION_SEND);
+                i.setType("audio/*");
+                i.putExtra(Intent.EXTRA_SUBJECT, f.getName());
+                i.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + AUTHORITY + f.getAbsolutePath()));
                 i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-		i = Intent.createChooser(i, context.getString(R.string.menu_send));
-		
-		try {
-			context.startActivity(i);
-                        c.moveToNext();
-		} catch (ActivityNotFoundException e) {
-			c.moveToNext();
-		}
+                i = Intent.createChooser(i, context.getString(R.string.menu_send));
+
+                try {
+                    context.startActivity(i);
+                    c.moveToNext();
+                } catch (ActivityNotFoundException e) {
+                    c.moveToNext();
+                }
             }
             c.close();
         }
