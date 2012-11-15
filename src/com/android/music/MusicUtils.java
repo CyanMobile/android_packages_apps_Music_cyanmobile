@@ -86,8 +86,8 @@ public class MusicUtils {
         public final static int GOTO_PLAYBACK = 7;
         public final static int PARTY_SHUFFLE = 8;
         public final static int SHUFFLE_ALL = 9;
-        public final static int DELETE_ITEM = 10;
-        public final static int SENDING_ITEM = 11;
+        public final static int SENDING_ITEM = 10;
+        public final static int DELETE_ITEM = 11;
         public final static int SCAN_DONE = 12;
         public final static int QUEUE = 13;
         public final static int EFFECTS_PANEL = 14;
