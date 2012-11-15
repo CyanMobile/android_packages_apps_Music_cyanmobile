@@ -329,8 +329,8 @@ public class ArtistAlbumBrowserActivity extends ExpandableListActivity
         menu.add(0, PLAY_SELECTION, 0, R.string.play_selection);
         SubMenu sub = menu.addSubMenu(0, ADD_TO_PLAYLIST, 0, R.string.add_to_playlist);
         MusicUtils.makePlaylistMenu(this, sub);
-        menu.add(0, DELETE_ITEM, 0, R.string.delete_item);
         menu.add(0, SENDING_ITEM, 0, R.string.sending_item);
+        menu.add(0, DELETE_ITEM, 0, R.string.delete_item);
         ExpandableListContextMenuInfo mi = (ExpandableListContextMenuInfo) menuInfoIn;
         
         int itemtype = ExpandableListView.getPackedPositionType(mi.packedPosition);
