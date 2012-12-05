@@ -2511,10 +2511,10 @@ public class MediaPlaybackService extends Service implements
 			} else {
 				setShuffleMode(SHUFFLE_AUTO);
 			}
-			shake_actions_db = preferences.getString("shake_actions_db", "0");
-			if (shake_actions_db.equals("0")) {
-				// Nothing - this needs to stay last
-			}
+		}
+		shake_actions_db = preferences.getString("shake_actions_db", "0");
+		if (shake_actions_db.equals("0")) {
+			// Nothing - this needs to stay last
 		}
 	}
 

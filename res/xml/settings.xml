@@ -120,7 +120,7 @@
                     android:title="@string/shaker_title_nowplaying" />
 
                 <CheckBoxPreference
-                    android:defaultValue="true"
+                    android:defaultValue="false"
                     android:key="cbFlip"
                     android:summary="@string/flip_to_pause_summary"
                     android:title="@string/flip_to_pause" />
