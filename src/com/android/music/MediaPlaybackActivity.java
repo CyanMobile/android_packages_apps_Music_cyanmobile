@@ -533,8 +533,8 @@ public class MediaPlaybackActivity extends Activity implements MusicUtils.Defs,
         paused = true;
         if (!mIntentDeRegistered) {
             mHandler.removeMessages(REFRESH);
-            unregisterReceiver(mStatusListener);
         }
+        unregisterReceiver(mStatusListener);
         unregisterReceiver(mScreenTimeoutListener);
 
         IntentFilter g = new IntentFilter();
@@ -1389,12 +1389,6 @@ public class MediaPlaybackActivity extends Activity implements MusicUtils.Defs,
         public void onReceive(Context context, Intent intent) {
             if (Intent.ACTION_SCREEN_ON.equals(intent.getAction())) {
                 if (mIntentDeRegistered) {
-                    IntentFilter f = new IntentFilter();
-                    f.addAction(MediaPlaybackService.PLAYSTATE_CHANGED);
-                    f.addAction(MediaPlaybackService.META_CHANGED);
-                    f.addAction(Intent.ACTION_SCREEN_ON);
-                    f.addAction(Intent.ACTION_SCREEN_OFF);
-                    registerReceiver(mStatusListener, new IntentFilter(f));
                     mIntentDeRegistered = false;
                 }
                     updateTrackInfo();
@@ -1406,7 +1400,6 @@ public class MediaPlaybackActivity extends Activity implements MusicUtils.Defs,
 
                 if (!mIntentDeRegistered) {
                     mHandler.removeMessages(REFRESH);
-                    unregisterReceiver(mStatusListener);
                     mIntentDeRegistered = true;
                 }
             }
